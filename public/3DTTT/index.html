@@ -1,0 +1,120 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" type="text/css" href="/3DTTT/main.css"></link>
+<link href="https://fonts.googleapis.com/css?family=Nunito&effect=anaglyph" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src="/3DTTT/client.js"></script>
+
+<title> 3DTTT </title>
+
+</head>
+
+<body>
+  <div class="header font-effect-anaglyph">
+    <header>
+      <a href="http://www.alieb.us" class="nolink" id="homeButton">Aaron Lieberman</a><a id="s"></a>
+    </header>
+  </div>
+
+  <div class="mainContainer">
+
+    <h1 class="title font-effect-anaglyph"> 3D Tic Tac Toe </h1>
+    <div class="menu">
+      <div>
+        <button class="button" id="reset" onclick="maybeReset()">Reset</button>
+      </div>
+      <div>
+        <button class="button" id="undo" onclick="undo()">Undo</button>
+      </div>
+      <div>
+        <button class="button" id="mode" onclick="changeMode()">Human vs Human</button>
+      </div>
+      <div>
+        <button class="button" id="turnLabel" onclick="check()">X</button>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-item right bottom" id="111"> </div>
+      <div class="grid-item left bottom right" id="121"> </div>
+      <div class="grid-item left bottom right" id="131"> </div>
+      <div class="grid-item left bottom" id="141"> </div>
+      <div class="grid-item top right bottom" id="112" > </div>
+      <div class="grid-item left top right bottom" id="122"> </div>
+      <div class="grid-item left top right bottom" id="132"> </div>
+      <div class="grid-item left top bottom" id="142"> </div>
+      <div class="grid-item top right bottom" id="113"> </div>
+      <div class="grid-item left top right bottom" id="123"> </div>
+      <div class="grid-item left top right bottom" id="133"> </div>
+      <div class="grid-item left top bottom" id="143"> </div>
+      <div class="grid-item right top" id="114"> </div>
+      <div class="grid-item left right top" id="124"> </div>
+      <div class="grid-item left right top" id="134"> </div>
+      <div class="grid-item left top" id="144"> </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-item right bottom" id="211"></div>
+      <div class="grid-item left bottom right" id="221"></div>
+      <div class="grid-item left bottom right" id="231"></div>
+      <div class="grid-item left bottom" id="241"></div>
+      <div class="grid-item top right bottom" id="212"></div>
+      <div class="grid-item left top right bottom" id="222"></div>
+      <div class="grid-item left top right bottom" id="232"></div>
+      <div class="grid-item left top bottom" id="242"></div>
+      <div class="grid-item top right bottom" id="213"></div>
+      <div class="grid-item left top right bottom" id="223"></div>
+      <div class="grid-item left top right bottom" id="233"></div>
+      <div class="grid-item left top bottom" id="243"></div>
+      <div class="grid-item right top" id="214"></div>
+      <div class="grid-item left right top" id="224"></div>
+      <div class="grid-item left right top" id="234"></div>
+      <div class="grid-item left top" id="244"></div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-item right bottom" id="311"></div>
+      <div class="grid-item left bottom right" id="321"></div>
+      <div class="grid-item left bottom right" id="331"></div>
+      <div class="grid-item left bottom" id="341"></div>
+      <div class="grid-item top right bottom" id="312"></div>
+      <div class="grid-item left top right bottom" id="322"></div>
+      <div class="grid-item left top right bottom" id="332"></div>
+      <div class="grid-item left top bottom" id="342"></div>
+      <div class="grid-item top right bottom" id="313"></div>
+      <div class="grid-item left top right bottom" id="323"></div>
+      <div class="grid-item left top right bottom" id="333"></div>
+      <div class="grid-item left top bottom" id="343"></div>
+      <div class="grid-item right top" id="314"></div>
+      <div class="grid-item left right top" id="324"></div>
+      <div class="grid-item left right top" id="334"></div>
+      <div class="grid-item left top" id="344"></div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-item right bottom" id="411"></div>
+      <div class="grid-item left bottom right" id="421"></div>
+      <div class="grid-item left bottom right" id="431"></div>
+      <div class="grid-item left bottom" id="441"></div>
+      <div class="grid-item top right bottom" id="412"></div>
+      <div class="grid-item left top right bottom" id="422"></div>
+      <div class="grid-item left top right bottom" id="432"></div>
+      <div class="grid-item left top bottom" id="442"></div>
+      <div class="grid-item top right bottom" id="413"></div>
+      <div class="grid-item left top right bottom" id="423"></div>
+      <div class="grid-item left top right bottom" id="433"></div>
+      <div class="grid-item left top bottom" id="443"></div>
+      <div class="grid-item right top" id="414"></div>
+      <div class="grid-item left right top" id="424"></div>
+      <div class="grid-item left right top" id="434"></div>
+      <div class="grid-item left top" id="444"></div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://github.com/AaronLieb/3DTTT" class="nolink font-effect-anaglyph"><i class="fab fa-github-alt fa-3x "></i></a>
+  </footer>
+
+</body>
+
+</html>
