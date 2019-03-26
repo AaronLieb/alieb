@@ -29,6 +29,10 @@ $('html').on('mousemove', function(e) {
 	if(mousedown) {drag(e)}
 });
 
+$('html').on('touchmove', function(e) {
+	if(mousedown) {drag(e)}
+});
+
 function drag(e) {
 	$('html').css("background-position", e.pageX + "px " + e.pageY + "px");
 	$('h1.result').html(e.pageX + ", " + e.pageY + ", " + mousedown);
