@@ -1,29 +1,4 @@
-* {
-  font-family: 'Varela Round', Helvetica, sans-serif;
-  font-weight: 600;
-  text-align: center;
-}
-
-html, body {
-  padding: 0;
-  margin: 0;
-}
-
-h1 {
-  font-size: 50px;
-  margin: 20px;
-  text-align: center;
-}
-
-div.grid {
-  margin: auto;
-  width: 300px;
-  height: 300px;
-}
-
-div.gridlet {
-  width: 75px; /* 100/(# of rows) */
-  height: 75px;
-  outline: 1px solid;
-  float: left;
+html {
+	background-size: 40px 40px;
+	background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
 }

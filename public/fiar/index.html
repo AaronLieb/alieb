@@ -1,24 +1,36 @@
-<html>
+<html lang="en">
+
 <head>
-  <link rel="stylesheet" type="text/css" href="/fiar/main.css"></link>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/fiar/main.js"></script>
-  <title> 5 in a row </title>
+	<meta charset="UTF-8">
+	<title>5 in a row</title>
+	<link rel="stylesheet" href="main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
-  <h1> Five in a row </h1>
-  <a href="javascript:incSize()">Increase Size</a>
-  <div class="container">
-    <div class="grid">
-      <div class="gridlet"></div>
-      <div class="gridlet"></div>
-      <div class="gridlet"></div>
-      <div class="gridlet"></div>
-    </div>
-  </div>
-
+<h1 class="result"> Grid Test </h1>
 </body>
+
 </html>
+
+<script>
+
+var mousedown = false;
+
+$('html').on('mousedown', function() {
+	mousedown = true;
+}).on('mouseup mouseleave', function() {
+	mousedown = false;
+});
+
+$('html').on('mousemove', function(e) {
+	if(mousedown) {drag(e)}
+});
+
+function drag(e) {
+	$('html').css("background-position", e.pageX + "px " + e.pageY + "px");
+	$('h1.result').html(e.pageX + ", " + e.pageY + ", " + mousedown);
+}
+</script>
