@@ -1,0 +1,94 @@
+* {
+  font-family: "IBM Plex Sans","Helvetica Neue",Helvetica,Arial;
+  font-weight: 100;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(196deg, #45e3ba, #45a3e3, #7d55e1);
+  background-size: 600% 600%;
+
+  -webkit-animation: ButtonGradient 26s ease infinite;
+  -moz-animation: ButtonGradient 26s ease infinite;
+  animation: ButtonGradient 26s ease infinite;
+
+}
+
+@-webkit-keyframes ButtonGradient {
+    0%{background-position:54% 0%}
+    50%{background-position:47% 100%}
+    100%{background-position:54% 0%}
+}
+@-moz-keyframes ButtonGradient {
+    0%{background-position:54% 0%}
+    50%{background-position:47% 100%}
+    100%{background-position:54% 0%}
+}
+@keyframes ButtonGradient {
+    0%{background-position:54% 0%}
+    50%{background-position:47% 100%}
+    100%{background-position:54% 0%}
+}
+
+h1 {
+  font-size: 50px;
+  margin: 20px;
+  text-align: center;
+}
+
+p {
+  margin: 20%;
+  font-size: 25px;
+  text-align: center;
+  margin: 30px;
+}
+
+ul {
+  /*display: flex;
+  justify-content: space-between;*/
+  width: 100%;
+  padding: 0;
+  margin: 30px auto auto auto;
+}
+
+ul > div > li {
+  opacity: 0;
+  list-style-type: none;
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.1);
+  padding: 10px 0;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+ul > div > li > a {
+  width: 100%;
+  font-size: 40px;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.gameMenu {
+  list-style-type: none;
+  width: 270px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+#soon {
+  opacity: 0;
+}
+
+.container {
+  max-width: 500px;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  margin: auto;
+}

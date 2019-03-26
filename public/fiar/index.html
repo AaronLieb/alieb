@@ -26,15 +26,22 @@ $('html').on('mousedown', function() {
 });
 
 $('html').on('mousemove', function(e) {
-	if(mousedown) {drag(e)}
+	if(mousedown) {dragMouse(e)}
 });
 
 $('html').on('touchmove', function(e) {
-	if(mousedown) {drag(e)}
+	dragFinger(e)
 });
 
-function drag(e) {
+function dragFinger(e) {
+	var pos = e.changedTouches
+
+	$('$html').css("background-position", pos.pageX + "px " + pos.pageY + "px");
+	$('h1.result').html(pos.pageX + ", " + pos.pageY);
+}
+
+function dragMouse(e) {
 	$('html').css("background-position", e.pageX + "px " + e.pageY + "px");
-	$('h1.result').html(e.pageX + ", " + e.pageY + ", " + mousedown);
+	$('h1.result').html(e.pageX + ", " + e.pageY;
 }
 </script>
