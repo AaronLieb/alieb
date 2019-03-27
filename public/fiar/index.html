@@ -74,8 +74,7 @@ function dragFinger(e) {
 	let dx = pos[0].pageX - ipos[0]
 	let dy = pos[0].pageY - ipos[1]
 	moveGrid(dx,dy)
-	moveSquares(sqX,sqY)
-	updateText(Math.floor(bgX),Math.floor(bgY))
+	moveSquares(dx,dy)
 }
 
 function startDragMouse(e) {
@@ -120,12 +119,13 @@ class Square {
 		this.y = y;
 		this.color = color;
 		this.id = squares.length;
-		this.ele = $('#' + this.id)
 		let ele = "<div class=\"square\" id=\"" + this.id + "\"></div>"
 		$('body').append(ele)
-		this.ele.css("left", x);
-		this.ele.css("top", y);
+		this.ele = $('#' + this.id)
+		this.ele.css("left", this.x);
+		this.ele.css("top", this.y);
 		this.ele.css("background-color", this.color)
+		console.log(this.ele)
 		squares.push(this)
 		console.log("constructed")
 	}
@@ -139,9 +139,9 @@ class Square {
 	move(dx,dy) {
 		// if inaccurate, use getPos() instead of this.z
 		this.x = this.x + dx;
-		tihs.y = this.y + dy;
-		this.ele.css("left", this.x);
-		this.ele.css("top", this.y);
+		this.y = this.y + dy;
+		this.ele.css("left", this.x + "px");
+		this.ele.css("top", this.y + "px");
 	}
 }
 </script>
