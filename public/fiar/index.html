@@ -11,6 +11,9 @@
 <body>
 
 <h1 class="result"> Grid Test </h1>
+<div class="square">
+	<p> test </p>
+</div>
 </body>
 
 </html>
@@ -20,6 +23,7 @@
 var mousedown = false;
 var ipos;
 var ibgpos;
+var isqpos;
 
 $('html').on('mousedown', startDragMouse).on('mouseup mouseleave', function() {
 	mousedown = false;
@@ -38,10 +42,17 @@ function getIBGpos() {
 	return pos;
 }
 
+function getSquarePos() {
+	let sq = $('.square')
+	let pos = [Number(sq.css('left').split("p")[0]),Number(sq.css('top').split("p")[0])]
+	return pos
+}
+
 
 function startDragFinger(e) {
 	e.preventDefault();
 	ibgpos = getIBGpos();
+	isqpos = getSquarePos();
 	let pos = e.changedTouches;
 	ipos = [pos[0].pageX, pos[0].pageY]
 }
@@ -49,28 +60,44 @@ function startDragFinger(e) {
 function dragFinger(e) {
 	e.preventDefault()
 	let pos = e.changedTouches
-	var x = (ibgpos[0] + pos[0].pageX - ipos[0])
-	var y = (ibgpos[1] + pos[0].pageY - ipos[1])
-	moveGrid(x,y)
-	updateText(Math.floor(x),Math.floor(y))
+	let dx = pos[0].pageX - ipos[0]
+	let dy = pos[0].pageY - ipos[1]
+	var bgX = ibgpos[0] + dx
+	var bgY = ibgpos[1] + dy
+	var sqX = isqpos[0] + dx
+	var sqY = isqpos[1] + dy
+	moveGrid(bgX,bgY)
+	moveSquares(sqX,sqY)
+	updateText(Math.floor(bgX),Math.floor(bgY))
 }
 
 function startDragMouse(e) {
 	mousedown = true;
 	ibgpos = getIBGpos();
+	isqpos = getSquarePos();
 	ipos = [e.pageX, e.pageY]
 }
 
 function dragMouse(e) {
-	var x = (ibgpos[0] + e.pageX - ipos[0])
-	var y = (ibgpos[1] + e.pageY - ipos[1])
-	moveGrid(x,y)
-	updateText(Math.floor(x),Math.floor(y))
+	let dx = e.pageX - ipos[0]
+	let dy = e.pageY - ipos[1]
+	var bgX = ibgpos[0] + dx
+	var bgY = ibgpos[1] + dy
+	var sqX = isqpos[0] + dx
+	var sqY = isqpos[1] + dy
+	moveGrid(bgX,bgY)
+	moveSquares(sqX,sqY)
+	updateText(Math.floor(bgX),Math.floor(bgY))
 }
 
 function moveGrid(x,y) {
 	$('html').css("background-position", x + "px " + y + "px");
 }
+function moveSquares(x,y) {
+	$(".square").css("left", x)
+	$(".square").css("top", y)
+}
+
 function updateText(one,two) {
 	$('h1.result').html("(" + one + ", " + two + ")");
 }
