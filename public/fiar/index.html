@@ -11,7 +11,12 @@
 <body>
 
 <h1 class="result"> Grid Test </h1>
-<div class="square">
+<div class="square"></div>
+<div class="menu">
+	<h1> test </h1>
+	<h1> more tests </h1>
+	<h1> more more tests </h1>
+<div>
 </div>
 </body>
 
@@ -32,6 +37,10 @@ $('html').on('mousemove', function(e) {
 	if(mousedown) {dragMouse(e)}
 });
 
+$('html').on('click', function(e) {
+	if(mousedown) {click(e)}
+});
+
 window.addEventListener("touchmove", dragFinger, {passive: false} );
 window.addEventListener("touchstart", startDragFinger, {passive: false} );
 
@@ -46,7 +55,6 @@ function getSquarePos() {
 	let pos = [Number(sq.css('left').split("p")[0]),Number(sq.css('top').split("p")[0])]
 	return pos
 }
-
 
 function startDragFinger(e) {
 	e.preventDefault();
@@ -89,9 +97,15 @@ function dragMouse(e) {
 	updateText(Math.floor(bgX),Math.floor(bgY))
 }
 
+function click(e) {
+	console.log("Clicked: " + e.pageX + ", " + e.pageY)
+
+}
+
 function moveGrid(x,y) {
 	$('html').css("background-position", x + "px " + y + "px");
 }
+
 function moveSquares(x,y) {
 	$(".square").css("left", x)
 	$(".square").css("top", y)
@@ -99,5 +113,13 @@ function moveSquares(x,y) {
 
 function updateText(one,two) {
 	$('h1.result').html("(" + one + ", " + two + ")");
+}
+
+class Square {
+	constructor(x,y,color) {
+		this.x = x;
+		this.y = y;
+		this.color = color;
+	}
 }
 </script>

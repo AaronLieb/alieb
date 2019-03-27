@@ -1,7 +1,11 @@
 html {
-	background-size: 40px 40px;
+	background-size: 40px 40px; /* size of grid squares */
 	background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
 	background-position: 0 0;
+}
+
+.menu {
+	background-color: blue;
 }
 
 .square {
