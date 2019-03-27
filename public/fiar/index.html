@@ -21,12 +21,7 @@ var mousedown = false;
 var ipos;
 var ibgpos;
 
-$('html').on('mousedown', function(e) {
-	mousedown = true;
-	ibgpos = getIBGpos();
-	//console.log(ibgpos)
-	ipos = [e.pageX, e.pageY]
-}).on('mouseup mouseleave', function() {
+$('html').on('mousedown', startDragMouse).on('mouseup mouseleave', function() {
 	mousedown = false;
 });
 
@@ -54,17 +49,29 @@ function startDragFinger(e) {
 function dragFinger(e) {
 	e.preventDefault()
 	let pos = e.changedTouches
-	var dx = (ibgpos[0] + pos[0].pageX - ipos[0])
-	var dy = (ibgpos[1] + pos[0].pageY - ipos[1])
+	var x = (ibgpos[0] + pos[0].pageX - ipos[0])
+	var y = (ibgpos[1] + pos[0].pageY - ipos[1])
+	moveGrid(x,y)
+	updateText(Math.floor(x),Math.floor(y))
+}
 
-	$('html').css("background-position", dx + "px " + dy + "px");
-	$('h1.result').html(ipos[0] - pos[0].pageX + ', ' + (ipos[0] - pos[0].pageY));
+function startDragMouse(e) {
+	mousedown = true;
+	ibgpos = getIBGpos();
+	ipos = [e.pageX, e.pageY]
 }
 
 function dragMouse(e) {
-	var dx = (ibgpos[0] + e.pageX - ipos[0])
-	var dy = (ibgpos[1] + e.pageY - ipos[1])
-	$('html').css("background-position", dx + "px " + dy + "px");
-	$('h1.result').html("(" + e.pageX + ", " + e.pageY + ")" + ", (" + ipos[0] + ", " + ipos[1] + ")");
+	var x = (ibgpos[0] + e.pageX - ipos[0])
+	var y = (ibgpos[1] + e.pageY - ipos[1])
+	moveGrid(x,y)
+	updateText(Math.floor(x),Math.floor(y))
+}
+
+function moveGrid(x,y) {
+	$('html').css("background-position", x + "px " + y + "px");
+}
+function updateText(one,two) {
+	$('h1.result').html("(" + one + ", " + two + ")");
 }
 </script>
