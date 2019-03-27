@@ -34,11 +34,12 @@ $('html').on('touchmove', function(e) {
 });
 
 function dragFinger(e) {
-	e.preventDefault()
-	var pos = e.changedTouches
+	//e.preventDefault()
+	$('h1.result').html("Touched")
+	//var pos = e.changedTouches
 
-	$('$html').css("background-position", pos.pageX + "px " + pos.pageY + "px");
-	$('h1.result').html(e.changedTouches);
+	//$('$html').css("background-position", pos.pageX + "px " + pos.pageY + "px");
+	//$('h1.result').html(e.changedTouches);
 }
 
 function dragMouse(e) {
