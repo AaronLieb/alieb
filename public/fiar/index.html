@@ -19,11 +19,11 @@
 
 var mousedown = false;
 var ipos;
+var ibgpos;
 
 $('html').on('mousedown', function(e) {
 	mousedown = true;
-	ibgposString = ($('html').css("background-position")).split(',')[0].split(" ")
-	ibgpos = [Number(ibgposString[0].split("p")[0]),Number(ibgposString[1].split("p")[0])]
+	ibgpos = getIBGpos();
 	//console.log(ibgpos)
 	ipos = [e.pageX, e.pageY]
 }).on('mouseup mouseleave', function() {
@@ -37,17 +37,22 @@ $('html').on('mousemove', function(e) {
 window.addEventListener("touchmove", dragFinger, {passive: false} );
 window.addEventListener("touchstart", startDragFinger, {passive: false} );
 
+function getIBGpos() {
+	let ibgposString = ($('html').css("background-position")).split(',')[0].split(" ")
+	let pos = [Number(ibgposString[0].split("p")[0]), Number(ibgposString[1].split("p")[0])]
+	return pos;
+}
+
+
 function startDragFinger(e) {
 	e.preventDefault();
-	ibgposString = ($('html').css("background-position")).split(',')[0].split(" ")
-	ibgpos = [Number(ibgposString[0].split("p")[0]),Number(ibgposString[1].split("p")[0])]
+	ibgpos = getIBGpos();
 	let pos = e.changedTouches;
-	ipos = [pos[0].pageX, pos[1].pageY]
+	ipos = [pos[0].pageX, pos[0].pageY]
 }
 
 function dragFinger(e) {
 	e.preventDefault()
-	//$('h1.result').html("Touched")
 	let pos = e.changedTouches
 	var dx = (ibgpos[0] + pos[0].pageX - ipos[0])
 	var dy = (ibgpos[1] + pos[0].pageY - ipos[1])
