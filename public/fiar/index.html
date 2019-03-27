@@ -33,6 +33,10 @@ $('html').on('touchmove', function(e) {
 	dragFinger(e)
 });
 
+document.ontouchmove = function (e) {
+  e.preventDefault();
+}
+
 function dragFinger(e) {
 	//$('h1.result').html("Touched")
 	var pos = e.changedTouches
