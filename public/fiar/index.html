@@ -29,7 +29,7 @@ $('html').on('mousemove', function(e) {
 	if(mousedown) {dragMouse(e)}
 });
 
-window.addEventListener("touchmove", dragFinger, {passive: true} );
+window.addEventListener("touchmove", dragFinger, {passive: false} );
 
 function dragFinger(e) {
 	e.preventDefault()
