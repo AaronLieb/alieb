@@ -34,11 +34,10 @@ $('html').on('touchmove', function(e) {
 });
 
 function dragFinger(e) {
-	e.preventDefault()
 	//$('h1.result').html("Touched")
 	var pos = e.changedTouches
 
-	$('$html').css("background-position", pos[0].pageX + "px " + pos[0].pageY + "px");
+	$('html').css("background-position", pos[0].pageX + "px " + pos[0].pageY + "px");
 	$('h1.result').html(e.changedTouches);
 }
 
