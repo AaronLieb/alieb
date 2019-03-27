@@ -122,8 +122,8 @@ class Square {
 		let ele = "<div class=\"square\" id=\"" + this.id + "\"></div>"
 		$('body').append(ele)
 		this.ele = $('#' + this.id)
-		this.ele.css("left", this.x);
-		this.ele.css("top", this.y);
+		this.ele.css("left", this.x + "px");
+		this.ele.css("top", this.y + "px");
 		this.ele.css("background-color", this.color)
 		console.log(this.ele)
 		squares.push(this)
