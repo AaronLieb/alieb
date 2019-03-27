@@ -29,17 +29,14 @@ $('html').on('mousemove', function(e) {
 	if(mousedown) {dragMouse(e)}
 });
 
-$('html').on('touchmove', function(e) {
-	dragFinger(e)
-});
+window.addEventListener("touchmove", dragFinger, {passive: true} );
 
 function dragFinger(e) {
-	e.preventDefault()
 	//$('h1.result').html("Touched")
 	var pos = e.changedTouches
 
 	$('html').css("background-position", pos[0].pageX + "px " + pos[0].pageY + "px");
-	$('h1.result').html(e.changedTouches);
+	$('h1.result').html(pos[0].pageX + ', ' + pos[0].pageY);
 }
 
 function dragMouse(e) {
