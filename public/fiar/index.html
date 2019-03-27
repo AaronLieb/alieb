@@ -32,6 +32,7 @@ $('html').on('mousemove', function(e) {
 window.addEventListener("touchmove", dragFinger, {passive: true} );
 
 function dragFinger(e) {
+	e.preventDefault()
 	//$('h1.result').html("Touched")
 	var pos = e.changedTouches
 
