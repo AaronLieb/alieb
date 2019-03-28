@@ -11,7 +11,6 @@
 <body>
 
 <h1 class="result"> Grid Test </h1>
-<div class="square"></div>
 <!-- <div class="menu">
 	<h1> test </h1>
 	<h1> more tests </h1>
@@ -27,72 +26,77 @@
 var mousedown = false;
 var ipos;
 var ibgpos;
-var fingerDrag = false;
+var drag = false;
 var squares = []
 
-$('html').on('mousedown', startDragMouse).on('mouseup mouseleave', function() {
-	mousedown = false;
-});
+$('html').on('mousedown', startDrag).on('mouseup', endDrag);
 
 $('html').on('mousemove', function(e) {
-	if(mousedown) {dragMouse(e)}
+	if(mousedown) {isDrag(e)}
 });
 
-$('html').on('click', click);
+window.addEventListener("touchmove", isDrag, {passive: false} );
+window.addEventListener("touchstart", startDrag, {passive: false} );
+window.addEventListener("touchend", endDrag, {passive: false} );
 
-window.addEventListener("touchmove", dragFinger, {passive: false} );
-window.addEventListener("touchstart", startDragFinger, {passive: false} );
-window.addEventListener("touchend", endDragFinger, {passive: false} );
 function getIBGpos() {
 	let ibgposString = ($('html').css("background-position")).split(',')[0].split(" ")
 	let pos = [Number(ibgposString[0].split("p")[0]), Number(ibgposString[1].split("p")[0])]
 	return pos;
 }
 
-function startDragFinger(e) {
-	console.log("Finger down")
-	e.preventDefault();
+function startDrag(e) {
+	console.log("startDrag")
+	let pos;
+	if (e.type.includes("touch")) {
+		pos = e.changedTouches[0];
+		e.preventDefault();
+	} else {
+		mousedown = true;
+		pos = e;
+	}
 	ibgpos = getIBGpos();
-	let pos = e.changedTouches;
-	ipos = [pos[0].pageX, pos[0].pageY]
+	ipos = [pos.pageX, pos.pageY]
 }
 
-function endDragFinger(e) {
-	console.log("Finger up: " + fingerDrag);
-	if (!fingerDrag) {
-		let pos = e.changedTouches[0]
+function endDrag(e) {
+	console.log("End Drag")
+	let pos;
+	if (e.type.includes("touch")) {
+		pos = e.changedTouches[0]
+	} else {
+		pos = e;
+		mousedown = false;
+	}
+	if (!drag) {
 		click(pos);
 	}
-	fingerDrag = false;
+	drag = false;
+	for (i in squares) {
+		squares[i].moving = false;
+	}
+
 }
 
-function dragFinger(e) {
-	console.log("Finger drag")
-	fingerDrag = true;
-	e.preventDefault()
-	let pos = e.changedTouches
-	let dx = pos[0].pageX - ipos[0]
-	let dy = pos[0].pageY - ipos[1]
-	moveGrid(dx,dy)
-	moveSquares(dx,dy)
-}
-
-function startDragMouse(e) {
-	mousedown = true;
-	ibgpos = getIBGpos();
-	ipos = [e.pageX, e.pageY]
-}
-
-function dragMouse(e) {
-	let dx = e.pageX - ipos[0]
-	let dy = e.pageY - ipos[1]
+function isDrag(e) {
+	console.log("Dragging")
+	let pos;
+	if (e.type.includes("touch")) {
+		pos = e.changedTouches[0];
+			e.preventDefault();
+	} else {
+		pos = e;
+	}
+	drag = true;
+	let dx = pos.pageX - ipos[0]
+	let dy = pos.pageY - ipos[1]
 	moveGrid(dx,dy)
 	moveSquares(dx,dy)
 }
 
 function click(e) {
 	console.log("Clicked: " + e.pageX + ", " + e.pageY)
-	let sq = new Square(e.pageX,e.pageY,"red")
+	let sq = new Square(e.pageX,e.pageY,"blue")
 
 }
 
@@ -100,7 +104,7 @@ function moveGrid(dx,dy) {
 	var bgX = ibgpos[0] + dx
 	var bgY = ibgpos[1] + dy
 	$('html').css("background-position", bgX + "px " + bgY + "px");
-	updateText(Math.floor(dx),Math.floor(dy))
+	updateText(Math.floor(bgX),Math.floor(bgY))
 }
 
 function moveSquares(dx,dy) {
@@ -115,8 +119,13 @@ function updateText(one,two) {
 
 class Square {
 	constructor(x,y,color) {
-		this.x = x;
-		this.y = y;
+		let xsnap = x - (x % 40) + (getIBGpos()[0] % 40)
+		let ysnap = y - (y % 40) + (getIBGpos()[1] % 40)
+		this.x = xsnap;
+		this.y = ysnap;
+		this.xi = this.x;
+		this.yi = this.y;
+		this.moving = false;
 		this.color = color;
 		this.id = squares.length;
 		let ele = "<div class=\"square\" id=\"" + this.id + "\"></div>"
@@ -127,7 +136,6 @@ class Square {
 		this.ele.css("background-color", this.color)
 		console.log(this.ele)
 		squares.push(this)
-		console.log("constructed")
 	}
 
 	getPos() {
@@ -137,9 +145,16 @@ class Square {
 	}
 
 	move(dx,dy) {
-		// if inaccurate, use getPos() instead of this.z
-		this.x = this.x + dx;
-		this.y = this.y + dy;
+		if (!this.moving) {
+			this.xi = this.x;
+			this.yi = this.y;
+			this.moving = true;
+		}
+		this.x = this.xi + dx;
+		this.y = this.yi + dy;
+
+		console.log("Square: (" + this.x + "," + this.y + ")")
+
 		this.ele.css("left", this.x + "px");
 		this.ele.css("top", this.y + "px");
 	}
