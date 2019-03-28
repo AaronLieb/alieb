@@ -117,10 +117,8 @@ function updateText(one,two) {
 class Square {
 	constructor(x,y,color) {
 		let ibg = getIBGpos()
-		let xsign = (x % 40 < ibg[0] % 40)
-		let ysign = (y % 40 < ibg[1] % 40)
-		let xsnap = x - (x % 40) - ((xsign * 40) - ibg[0] % 40)
-		let ysnap = y - (y % 40) - ((ysign * 40) - ibg[1] % 40)
+		let xsnap = x - ((x - (ibg[0] % 40)) % 40)
+		let ysnap = y - ((y - (ibg[1] % 40)) % 40)
 		this.x = xsnap;
 		this.y = ysnap;
 		console.log("Placed: " + this.x + ", " + this.y)
