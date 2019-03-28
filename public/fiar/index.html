@@ -28,6 +28,7 @@ var ipos;
 var ibgpos;
 var drag = false;
 var squares = []
+var color = "red"
 
 $('html').on('mousedown', startDrag).on('mouseup', endDrag);
 
@@ -93,7 +94,9 @@ function isDrag(e) {
 
 function click(e) {
 	console.log("Clicked: " + e.pageX + ", " + e.pageY)
-	let sq = new Square(e.pageX,e.pageY,"blue")
+	let sq = new Square(e.pageX,e.pageY,color)
+	if (color=="red") {color="blue"}
+	else {color="red"}
 
 }
 
@@ -130,8 +133,8 @@ class Square {
 		let ele = "<div class=\"square\" id=\"" + this.id + "\"></div>"
 		$('body').append(ele)
 		this.ele = $('#' + this.id)
-		this.ele.css("left", this.x + "px");
-		this.ele.css("top", this.y + "px");
+		this.ele.css("left", (this.x + 2) + "px");
+		this.ele.css("top", (this.y + 2) + "px");
 		this.ele.css("background-color", this.color)
 		squares.push(this)
 	}
@@ -151,8 +154,8 @@ class Square {
 		this.x = this.xi + dx;
 		this.y = this.yi + dy;
 
-		this.ele.css("left", this.x + "px");
-		this.ele.css("top", this.y + "px");
+		this.ele.css("left", (this.x + 2) + "px");
+		this.ele.css("top", (this.y + 2) + "px");
 	}
 }
 </script>
