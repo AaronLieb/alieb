@@ -4,7 +4,7 @@ function Mouse() {
   this.mdrag = false;
   this.pos = [];
   this.ipos = [];
-  self.idistance = null;
+  this.idistance = null;
 
   this.mouseDown = function(e) {
     console.log(e.changedTouches)
@@ -43,7 +43,7 @@ function Mouse() {
     if (self.idistance != null) {self.idistance = distance.slice(0)}
     let ddis = (self.idistance - distance) / 5;
     game.grid.zoom(game.grid.size + ddis)
-    $('.result').text(self.distance)
+    $('.result').text(ddis)
   }
 
   this.click = function() {
