@@ -37,7 +37,7 @@ function Mouse() {
     let touches = e.changedTouches;
     let pos1 = [touches[0].pageX,touches[0].pageY];
     let pos2 = [touches[1].pageX,touches[1].pageY];
-    self.distance = Math.sqrt( ((pos1[0] + pos2[0])**2) + ((pos1[1] + pos2[1])**2) )
+    self.distance = Math.sqrt( ((pos1[0] - pos2[0])**2) + ((pos1[1] - pos2[1])**2) )
     $('.result').text(self.distance)
   }
 
