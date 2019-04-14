@@ -7,14 +7,13 @@ function Mouse() {
 
   this.mouseDown = function(e) {
     console.log(e.changedTouches)
-    $('.result').text(e.changedTouches.length)
     self.pos = self.convertTouches(e)
     self.ipos = self.pos;
     self.mdown = true;
   }
 
   this.mouseMove = function(e) {
-    $('.result').text(e.changedTouches.length)
+    if (e.changedTouches.length == 2) {self.pinch(e)}
     if (!self.mdown) {return;} // Not dragging
     self.mdrag = true;
     self.pos = self.convertTouches(e);
@@ -32,6 +31,14 @@ function Mouse() {
     } else {
       self.click();
     }
+  }
+
+  this.pinch = function(e) {
+    let touches = e.changedTouches;
+    let pos1 = [touches[0].pageX,touches[0].pageY];
+    let pos2 = [touches[1].pageX,touches[1].pageY];
+    self.idx = Math.sqrt( ((pos1[0] + pos2[0])**2) + ((pos1[1] + pos2[1])**2) )
+    $('.result').text(self.idx)
   }
 
   this.click = function() {
