@@ -20,7 +20,7 @@ function Square(x,y) {
   this.move = function(dx,dy) {
     if (!self.moving) {
       self.moving = true;
-      self.ipos = self.pos.splice(0)
+      self.ipos = self.pos.slice(0)
     }
     self.pos[0] = self.ipos[0] + dx;
     self.pos[1] = self.ipos[1] + dy;
