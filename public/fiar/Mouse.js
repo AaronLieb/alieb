@@ -40,11 +40,16 @@ function Mouse() {
     let touches = e.changedTouches;
     let pos1 = [touches[0].pageX,touches[0].pageY];
     let pos2 = [touches[1].pageX,touches[1].pageY];
+    $('.result').text("1")
     var distance = Math.sqrt( ((pos1[0] - pos2[0])**2) + ((pos1[1] - pos2[1])**2) )
+    $('.result').text("2")
     var ddis = 0;
     if (self.idistance != 0) {ddis = (distance - self.idistance) / 40;}
+    $('.result').text("3")
     self.idistance = distance.slice(0)
+    $('.result').text("4")
     game.grid.zoom(game.grid.size + ddis)
+    $('.result').text("5")
     $('.result').text(ddis)
   }
 
