@@ -14,7 +14,6 @@ function Square(x,y) {
   game.grid.squares.push(this)
 
   this.set = function(x,y) {
-    console.log(self.rpos)
     self.ele.css("left", (x + game.offset) + "px").css("top", (y + game.offset) + "px")
   }
 
@@ -32,7 +31,6 @@ function Square(x,y) {
     if (game.color == "red") {
       game.color = "blue"
     } else {game.color = "red"}
-    console.log(game.color)
   }
 
   this.reset = function() {

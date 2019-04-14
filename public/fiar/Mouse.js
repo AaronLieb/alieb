@@ -6,6 +6,8 @@ function Mouse() {
   this.ipos = [];
 
   this.mouseDown = function(e) {
+    console.log(e.changedTouches)
+    $('.result').text(e.changedTouches.length)
     self.pos = self.convertTouches(e)
     self.ipos = self.pos;
     self.mdown = true;
