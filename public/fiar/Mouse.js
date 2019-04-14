@@ -46,7 +46,7 @@ function Mouse() {
     var ddis = 0;
     if (self.idistance != 0) {ddis = (distance - self.idistance) / 40;}
     $('.result').text("3")
-    self.idistance = distance.slice(0)
+    self.idistance = distance.splice(0)
     $('.result').text("4")
     game.grid.zoom(game.grid.size + ddis)
     $('.result').text("5")
