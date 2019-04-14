@@ -19,8 +19,8 @@ function Mouse() {
     self.pos = self.convertTouches(e);
     let dx = self.pos[0] - self.ipos[0];
     let dy = self.pos[1] - self.ipos[1];
-    game.grid.move(dx,dy)
-    game.grid.moveSquares(dx,dy)
+    //game.grid.move(dx,dy)
+    //game.grid.moveSquares(dx,dy)
   }
 
   this.mouseUp = function() {
