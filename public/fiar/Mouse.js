@@ -14,6 +14,7 @@ function Mouse() {
   }
 
   this.mouseMove = function(e) {
+    $('.result').text(e.changedTouches.length)
     if (!self.mdown) {return;} // Not dragging
     self.mdrag = true;
     self.pos = self.convertTouches(e);
