@@ -4,6 +4,7 @@ function Mouse() {
   this.mdrag = false;
   this.pos = [];
   this.ipos = [];
+  self.idistance = null;
 
   this.mouseDown = function(e) {
     console.log(e.changedTouches)
@@ -25,6 +26,7 @@ function Mouse() {
 
   this.mouseUp = function() {
     self.mdown = false;
+    self.idistance = null;
     if (self.mdrag) {
       self.mdrag = false;
       game.grid.stop();
@@ -37,7 +39,10 @@ function Mouse() {
     let touches = e.changedTouches;
     let pos1 = [touches[0].pageX,touches[0].pageY];
     let pos2 = [touches[1].pageX,touches[1].pageY];
-    self.distance = Math.sqrt( ((pos1[0] - pos2[0])**2) + ((pos1[1] - pos2[1])**2) )
+    let distance = Math.sqrt( ((pos1[0] - pos2[0])**2) + ((pos1[1] - pos2[1])**2) )
+    if (self.idistance != null) {self.idistance = distance.slice(0)}
+    let ddis = (self.idistance - distance) / 5;
+    game.grid.zoom(game.grid.size + ddis)
     $('.result').text(self.distance)
   }
 
