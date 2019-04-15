@@ -14,13 +14,14 @@ function Mouse() {
   }
 
   this.mouseMove = function(e) {
-    if (e.changedTouches.length == 2) {self.pinch(e)}
+    if (e.changedTouches.length == 2) {self.pinch(e); return}
+    else if (e.changedTouches != 1) {return}
     if (!self.mdown) {return;} // Not dragging
     self.mdrag = true;
     self.pos = self.convertTouches(e);
     let dx = self.pos[0] - self.ipos[0];
     let dy = self.pos[1] - self.ipos[1];
-    //game.grid.moveAll(dx,dy)
+    game.grid.moveAll(dx,dy)
   }
 
   this.mouseUp = function() {
