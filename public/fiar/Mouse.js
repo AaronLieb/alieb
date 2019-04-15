@@ -14,8 +14,8 @@ function Mouse() {
   }
 
   this.mouseMove = function(e) {
-    if (e.changedTouches.length == 2) {self.pinch(e); return}
-    else if (e.changedTouches != 1) {return}
+    if (e.touches.length == 2) {self.pinch(e); return}
+    else if (e.touches.length != 1) {return}
     if (!self.mdown) {return;} // Not dragging
     self.mdrag = true;
     self.pos = self.convertTouches(e);
