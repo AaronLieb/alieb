@@ -37,6 +37,7 @@ function Mouse() {
 
   this.pinch = function(e) {
     $('.result').text("pinching")
+    self.mdrag = true
     let touches = e.touches;
     let pos1 = [touches[0].screenX,touches[0].screenY];
     let pos2 = [touches[1].screenX,touches[1].screenY];
