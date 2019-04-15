@@ -7,14 +7,14 @@ function Mouse() {
   this.idistance = 0;
 
   this.mouseDown = function(e) {
-    console.log(e.changedTouches)
+    console.log(e)
     self.pos = self.convertTouches(e)
     self.ipos = self.pos;
     self.mdown = true;
   }
 
   this.mouseMove = function(e) {
-    //if (e.changedTouches.length == 2) {self.pinch(e)}
+    if (e.changedTouches.length == 2) {self.pinch(e)}
     if (!self.mdown) {return;} // Not dragging
     self.mdrag = true;
     self.pos = self.convertTouches(e);
@@ -36,7 +36,7 @@ function Mouse() {
 
   this.pinch = function(e) {
     $('.result').text("pinching")
-    let touches = e.changedTouches;
+    let touches = e.touches;
     let pos1 = [touches[0].screenX,touches[0].screenY];
     let pos2 = [touches[1].screenX,touches[1].screenY];
     var distance = Math.sqrt( ((pos1[0] - pos2[0])**2) + ((pos1[1] - pos2[1])**2) )
@@ -55,8 +55,8 @@ function Mouse() {
   this.convertTouches = function(e) {
     if (e.type.includes("touch")) {
       e.preventDefault()
-      let t = e.changedTouches
-      let result = [t[t.length - 1].pageX,t[t.length - 1].pageY];
+      let t = e.touches
+      let result = [t[0].pageX,t[0].pageY];
       $('.result').text(result[0] + ", " + result[1])
       return result
     } else {
