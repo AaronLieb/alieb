@@ -20,8 +20,7 @@ function Mouse() {
     self.pos = self.convertTouches(e);
     let dx = self.pos[0] - self.ipos[0];
     let dy = self.pos[1] - self.ipos[1];
-    //game.grid.move(dx,dy)
-    //game.grid.moveSquares(dx,dy)
+    //game.grid.moveAll(dx,dy)
   }
 
   this.mouseUp = function() {
@@ -38,13 +37,13 @@ function Mouse() {
   this.pinch = function(e) {
     $('.result').text("pinching")
     let touches = e.changedTouches;
-    let pos1 = [touches[0].pageX,touches[0].pageY];
-    let pos2 = [touches[1].pageX,touches[1].pageY];
+    let pos1 = [touches[0].screenX,touches[0].screenY];
+    let pos2 = [touches[1].screenX,touches[1].screenY];
     var distance = Math.sqrt( ((pos1[0] - pos2[0])**2) + ((pos1[1] - pos2[1])**2) )
     var ddis = 0;
     if (self.idistance != 0) {ddis = (distance - self.idistance) / 15;}
     self.idistance = distance
-    game.grid.zoom(game.grid.size + ddis)
+    game.grid.zoom(game.grid.size + ddis, true)
     $('.result').text(ddis)
   }
 

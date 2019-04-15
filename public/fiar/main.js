@@ -26,8 +26,8 @@ window.addEventListener("touchend", mouse.mouseUp, {passive: false} );
 
 document.addEventListener('keydown', function(event){
     if(event.keyCode == 74) {
-      game.grid.zoom(game.grid.size - 1)
+      game.grid.zoom(game.grid.size - 1, true)
     } else if (event.keyCode == 75) {
-      game.grid.zoom(game.grid.size + 1)
+      game.grid.zoom(game.grid.size + 1, true)
     }
 } );

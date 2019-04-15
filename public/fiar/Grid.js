@@ -24,6 +24,11 @@ function Grid(size) {
     self.squares.forEach(function(sq) {sq.move(dx,dy)})
   }
 
+  this.moveAll = function(dx,dy) {
+    self.move(dx,dy);
+    self.moveSquares(dx,dy)
+  }
+
   this.stop = function() {
     self.moving = false;
     self.squares.forEach(function(sq) {sq.moving = false;})
@@ -33,9 +38,15 @@ function Grid(size) {
     self.set(...self.pos)
     self.squares.forEach(function(sq) {sq.reset()})
   }
-  this.zoom = function(newSize) {
+  this.zoom = function(newSize, center) {
     self.size = newSize
     $('html').css("background-size", newSize + "px " + newSize + "px")
     self.squares.forEach(function(sq) {sq.changeSize(newSize)})
+    if (center) {
+      let ratio = (8*(newSize/self.size))
+      let dx = $(document).width() / ratio
+      let dy = $(document).height() / ratio
+      self.moveAll(dx,dy)
+    }
   }
 }
