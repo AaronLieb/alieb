@@ -57,8 +57,8 @@ function Mouse() {
       e.preventDefault()
       let t = e.changedTouches
       let result = [t[t.length - 1].pageX,t[t.length - 1].pageY];
-      return result
       $('.result').text(result[0] + ", " + result[1])
+      return result
     } else {
       return [e.pageX,e.pageY];
     }
