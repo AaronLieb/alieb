@@ -20,7 +20,7 @@ function Mouse() {
     self.pos = self.convertTouches(e);
     let dx = self.pos[0] - self.ipos[0];
     let dy = self.pos[1] - self.ipos[1];
-    //game.grid.moveAll(dx,dy)
+    game.grid.moveAll(dx,dy)
   }
 
   this.mouseUp = function() {
@@ -43,7 +43,7 @@ function Mouse() {
     var ddis = 0;
     if (self.idistance != 0) {ddis = (distance - self.idistance) / 15;}
     self.idistance = distance
-    game.grid.zoom(game.grid.size + ddis, true)
+    game.grid.zoom(game.grid.size + ddis, false)
     $('.result').text(ddis)
   }
 
