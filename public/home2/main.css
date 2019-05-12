@@ -84,7 +84,7 @@ body {
 @media screen and (min-width: 640px) {
   .heroTitle {font-size: 80px;}
   .heroSubtitle {font-size: 40px; margin-bottom: 0;}
-  .hero {min-height: 300px; max-height: 300px;}
+  .hero {min-height: 300px; max-height: 300px; padding-left: 35px;}
   .scrollDown {display: none;}}
 @media screen and (min-width: 1600px) {
   .heroTitle {font-size: 100px;}
