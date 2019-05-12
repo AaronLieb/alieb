@@ -1,0 +1,96 @@
+body {
+  font-family: 'Fira Sans', serif;
+  margin: 0;
+}
+
+header {
+  /*padding: 10px;*/
+  color: red;
+}
+
+body {
+  font-family: sans-serif, serif;
+  margin: 0;
+}
+
+footer {
+  color: white;
+  padding: 10px;
+  min-width: 100%;
+  bottom: 0px;
+  background-color: black
+}
+
+.mainContainer {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  font-size: 100px; /* 50px */
+  font-family: 'Fira Sans', serif;
+  font-weight: 400;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.subtitle {
+  margin-top: 0;
+  font-size: 50px;
+  font-weight: 200;
+  font-family: 'Fira Sans', serif;
+}
+
+.hero {
+  margin: 0;
+  padding: 50px 0 0 20px;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+.contentContainer {
+  margin: -100px 0 0 0;
+  padding: 50px;
+  background-color: grey;
+}
+
+.scroll-down {
+    position: absolute;
+    left: 50%;
+    bottom: 3.5em;
+    display: inline-block;
+    width: 3.5em;
+    height: 3.5em;
+    font-weight: 200;
+    margin-left: -1.75em;
+    border-top: none;
+    border-right: none;
+    transform: translateX(-7em) scaleX(5) scaleY(2.5) rotate(180deg);
+    transition: opacity 1s ease
+}
+
+
+.gradientText {
+  /* Animated Gradient */
+  background: linear-gradient(70deg, #fead16, #fe6616, #fe1616);
+  background-size: 200% 200%;
+  -webkit-animation: Gradient 11s ease infinite;
+  -moz-animation: Gradient 11s ease infinite;
+  animation: Gradient 11s ease infinite;
+  color: rgba(0,0,0,0);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@-webkit-keyframes Gradient {
+    0%{background-position:87% 0%}
+    50%{background-position:14% 100%}
+    100%{background-position:87% 0%}}
+@-moz-keyframes Gradient {
+    0%{background-position:87% 0%}
+    50%{background-position:14% 100%}
+    100%{background-position:87% 0%}}
+@keyframes Gradient {
+    0%{background-position:87% 0%}
+    50%{background-position:14% 100%}
+    100%{background-position:87% 0%}}

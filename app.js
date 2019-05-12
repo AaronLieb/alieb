@@ -7,6 +7,10 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/home/index.html');
 });
 
+app.get('/home2', function(req, res){
+  res.sendFile(__dirname + '/public/home2/index.html');
+});
+
 app.get('/3dttt', function(req, res){
   res.sendFile(__dirname + '/public/3DTTT/index.html');
 });
