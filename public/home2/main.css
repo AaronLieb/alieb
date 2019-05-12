@@ -85,7 +85,7 @@ footer {
     margin-left: -1.75em;
     border-top: none;
     border-right: none;
-    transform: translateX(-7em) scaleX(5) scaleY(2.5) rotate(180deg);
+    transform: translateX(-6.75em) scaleX(5) scaleY(2.5) rotate(180deg);
     transition: opacity 1s ease
 }
 
