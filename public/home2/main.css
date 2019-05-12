@@ -131,8 +131,13 @@ a.link {
 }
 
 p.desc {
+  margin-top: 3px;
   font-size: 15px;
   color: #4a5a6a;
+}
+
+div.container {
+  margin: 15px;
 }
 
 
