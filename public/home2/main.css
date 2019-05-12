@@ -130,6 +130,10 @@ a.link {
   color: #6699ff;
 }
 
+a.nolink {
+  color: #aaa;
+}
+
 p.desc {
   margin-top: 3px;
   font-size: 15px;
