@@ -4,11 +4,11 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/public/home/index.html');
+  res.sendFile(__dirname + '/public/home2/index.html');
 });
 
 app.get('/home2', function(req, res){
-  res.sendFile(__dirname + '/public/home2/index.html');
+  res.sendFile(__dirname + '/public/home/index.html');
 });
 
 app.get('/3dttt', function(req, res){

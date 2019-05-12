@@ -191,5 +191,6 @@ footer {
 }
 
 .footerContainer {
-  padding: 50px;
+  font-size: 15px;
+  padding: 30px;
 }
