@@ -7,7 +7,7 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/home2/index.html');
 });
 
-app.get('/home2', function(req, res){
+app.get('/old', function(req, res){
   res.sendFile(__dirname + '/public/home/index.html');
 });
 
@@ -26,6 +26,10 @@ app.get('/worldess', function(req, res){
 
 app.get('/time', function(req, res){
   res.sendFile(__dirname + '/public/time/index.html');
+});
+
+app.get('/bases', function(req, res){
+  res.sendFile(__dirname + '/public/bases/index.html');
 });
 
 
