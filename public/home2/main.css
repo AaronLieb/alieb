@@ -18,7 +18,7 @@ body {
   padding: 0;
 }
 
-.title {
+.heroTitle {
   font-size: 100px; /* 50px */
   font-family: 'Fira Sans', serif;
   font-weight: 400;
@@ -26,7 +26,7 @@ body {
   padding-bottom: 0;
 }
 
-.subtitle {
+.heroSubtitle {
   margin-top: 0;
   font-size: 50px;
   font-weight: 200;
@@ -41,30 +41,17 @@ body {
 }
 
 @media screen and (max-width: 400px) {
-  .title {font-size: 70px;}
-  .subtitle {font-size: 35px;}
-}
-
+  .heroTitle {font-size: 70px;}
+  .heroSubtitle {font-size: 35px;}}
 @media screen and (min-width: 400px) {
-  .title {font-size: 75px;}
-  .subtitle {font-size: 37px;}
-}
-
+  .heroTitle {font-size: 75px;}
+  .heroSubtitle {font-size: 37px;}}
 @media screen and (min-width: 500px) {
-  .title {font-size: 80px;}
-  .subtitle {font-size: 40px;}
-}
-
+  .heroTitle {font-size: 80px;}
+  .heroSubtitle {font-size: 40px;}}
 @media screen and (min-width: 600px) {
-  .title {font-size: 100px;}
-  .subtitle {font-size: 50px;}
-}
-
-.contentContainer {
-  margin: -40px 0 0 0;
-  padding: 50px 50px 1000px 50px;
-  background-color: #F5F5F5;
-}
+  .heroTitle {font-size: 100px;}
+  .heroSubtitle {font-size: 50px;}}
 
 .scroll-down {
     position: absolute;
@@ -102,6 +89,51 @@ body {
     0%{background-position:87% 0%}
     50%{background-position:14% 100%}
     100%{background-position:87% 0%}}
+
+.contentContainer {
+  margin: -40px 0 0 0;
+  padding: 50px 50px 1000px 50px;
+  background-color: #F5F5F5;
+}
+
+.box {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.title {
+  margin: 0;
+  margin-top: 15px;
+  color: #1a2a3a;
+}
+
+h3.title {
+  margin-left: 20px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+h4.title {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+h5.title {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+a.link {
+  text-decoration: none;
+  color: #6699ff;
+}
+
+p.desc {
+  font-size: 15px;
+  color: #4a5a6a;
+}
 
 
 footer {
