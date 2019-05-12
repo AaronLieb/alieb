@@ -53,7 +53,7 @@ body {
   .heroTitle {font-size: 100px;}
   .heroSubtitle {font-size: 50px;}}
 
-.scroll-down {
+.scrollDown {
     position: absolute;
     left: 50%;
     bottom: 3.5em;
@@ -61,6 +61,8 @@ body {
     width: 3.5em;
     height: 3.5em;
     font-weight: 200;
+    cursor: default;
+    -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none;
     transform: translateX(-8.95em) scaleX(5) scaleY(2.5) rotate(180deg);
 }
 
