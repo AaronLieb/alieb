@@ -13,14 +13,6 @@ body {
   margin: 0;
 }
 
-footer {
-  color: white;
-  padding: 10px;
-  min-width: 100%;
-  bottom: 0px;
-  background-color: black
-}
-
 .mainContainer {
   margin: 0;
   padding: 0;
@@ -70,8 +62,8 @@ footer {
 
 .contentContainer {
   margin: -40px 0 0 0;
-  padding: 50px;
-  background-color: grey;
+  padding: 50px 50px 1000px 50px;
+  background-color: #F5F5F5;
 }
 
 .scroll-down {
@@ -114,3 +106,17 @@ footer {
     0%{background-position:87% 0%}
     50%{background-position:14% 100%}
     100%{background-position:87% 0%}}
+
+
+footer {
+  color: white;
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  bottom: 0px;
+  background-color: #aaa;
+}
+
+.footerContainer {
+  padding: 50px;
+}
