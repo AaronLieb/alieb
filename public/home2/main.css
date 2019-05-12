@@ -74,11 +74,7 @@ body {
     width: 3.5em;
     height: 3.5em;
     font-weight: 200;
-    margin-left: -1.75em;
-    border-top: none;
-    border-right: none;
-    transform: translateX(-7.2em) scaleX(5) scaleY(2.5) rotate(180deg);
-    transition: opacity 1s ease
+    transform: translateX(-8.95em) scaleX(5) scaleY(2.5) rotate(180deg);
 }
 
 
