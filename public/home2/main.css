@@ -152,6 +152,10 @@ p.desc {
   color: #4a5a6a;
 }
 
+p.desc.two {
+  font-size: 20px;
+}
+
 div.itemContainer {
   margin: 15px 0;
 }
