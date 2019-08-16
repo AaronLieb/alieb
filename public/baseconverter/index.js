@@ -14,7 +14,7 @@ function verifyInput(...args) {
   for (let val of args) {
     const n = Number(val);
     if (!n || n > 36 || n < 2) {
-      if (val == "text") {
+      if (val.toLowerCase() == "text") {
         continue;
       } else {
         return false;
@@ -32,7 +32,7 @@ function convert() {
   const b1 = $("#base1").val();
   const b2 = $("#base2").val();
   var outputEle = $(".output");
-  if (verifyInput(b1,b2)) {
+  if (!(verifyInput(b1,b2))) {
     outputEle.val("Error")
     return;
   }
