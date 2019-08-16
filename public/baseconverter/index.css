@@ -35,6 +35,12 @@ label {
   margin: 5px 0;
 }
 
+@media only screen and (max-width: 300px) {
+  label {
+    display: block;
+  }
+}
+
 input[type="text"], input[type="number"] {
   border-radius: 3px;
   border: 1px solid #ccc;
