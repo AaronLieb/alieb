@@ -10,19 +10,29 @@ function copyText() {
   $(".popup").show().delay(300).fadeOut(700);
 }
 
-function verifyInput() {
-  const b1 = $("#base1").val();
-  const b2 = $("#base2").val();
-  if ((b1,b2 >= 2 && b1,b2 <= 36) || ((b1.toLowerCase() == "text") && b2 >= 2 && b2 <=36) || ((b2.toLowerCase() == "text") && b1 >= 2 && b1 <=36)) {
-    convert(b1,b2);
-  } else {
-    $(".output").val("Error")
+function verifyInput(...args) {
+  for (let val of args) {
+    const n = Number(val);
+    if (!n || n > 36 || n < 2) {
+      if (val == "text") {
+        continue;
+      } else {
+        return false;
+      }
+    }
   }
+  return true;
 }
 
 function convert(b1,b2) {
   var output = "";
   var input = $("#number").val();
+  const b1 = $("#base1").val();
+  const b2 = $("#base2").val();
+  var outputEle = $(".output");
+  if (verifyInput(b1,b2)) {
+    outputEle.val("Error")
+  }
   if (b1.toLowerCase() == "text") {
     for (var i = 0; i < input.length; i++) {
       output += input[i].charCodeAt(0).toString(b2) + " ";
@@ -38,7 +48,7 @@ function convert(b1,b2) {
     var numC = parseInt(input, b1);
     output = numC.toString(b2)
   }
-  $(".output").val(output)
+  outputEle.val(output)
 }
 
 function flip() {
