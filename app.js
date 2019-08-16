@@ -29,7 +29,7 @@ app.get('/time', function(req, res){
 });
 
 app.get('/bases', function(req, res){
-  res.sendFile(__dirname + '/public/bases/index.html');
+  res.sendFile(__dirname + '/public/baseconverter/index.html');
 });
 
 

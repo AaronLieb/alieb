@@ -30,6 +30,9 @@ p {
 
 body {
 	line-height: 1.2; /* Chrome Default: 1.2 */
+	font-family: sans-serif;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ol, ul {
 	list-style: none;
