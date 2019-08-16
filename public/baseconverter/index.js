@@ -34,6 +34,7 @@ function convert() {
   var outputEle = $(".output");
   if (verifyInput(b1,b2)) {
     outputEle.val("Error")
+    return;
   }
   if (b1.toLowerCase() == "text") {
     for (var i = 0; i < input.length; i++) {
