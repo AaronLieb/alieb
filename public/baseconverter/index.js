@@ -9,7 +9,7 @@ function copyText() {
     var readOnly = el.readOnly;
     el.contentEditable = true;
     el.readOnly = true;
-    var range = docuent.createRange();
+    var range = document.createRange();
     range.selectNodeContents(el);
     var selection = window.getSelection();
     selection.removeAllRanges();
