@@ -3,10 +3,24 @@ window.onload = function() {
 }
 
 function copyText() {
-  console.log("Text Copied");
-  $(".output").select()
+  if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+    var el = document.querySelector(".output");
+    var editable = el.contentEditable;
+    var readOnly = el.readOnly;
+    el.contentEditable = true;
+    el.readOnly = true;
+    var range = docuent.createRange();
+    range.selectNodeContents(el);
+    var selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    el.setSelectionRange(0, 999999);
+    el.contentEditable = editable;
+    el.readOnly = readOnly;
+  } else {
+    $(".output").select()
+  }
   document.execCommand("copy");
-  $(".output").empty();
   $(".popup").show().delay(300).fadeOut(700);
 }
 
