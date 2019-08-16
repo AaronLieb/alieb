@@ -113,6 +113,9 @@ input.small {
   .note {
     display: block;
   }
+  .m {
+    margin-top: 0;
+  }
 }
 
 #arrow {
