@@ -28,7 +28,7 @@ app.get('/time', function(req, res){
   res.sendFile(__dirname + '/public/time/index.html');
 });
 
-app.get('/bases', function(req, res){
+app.get('/baseconverter', function(req, res){
   res.sendFile(__dirname + '/public/baseconverter/index.html');
 });
 
