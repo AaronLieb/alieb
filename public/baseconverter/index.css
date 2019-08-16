@@ -109,15 +109,6 @@ input.small {
   color: #ccc;
 }
 
-@media only screen and (max-width: 600px) {
-  .note {
-    display: block;
-  }
-  .m {
-    margin-top: 0;
-  }
-}
-
 #arrow {
   text-decoration: none;
   color: black;
@@ -125,26 +116,13 @@ input.small {
 
 .m1 {
 margin-top: 10px;
-} .m2 {
-margin-top: 20px;
-} .m3 {
-margin-top: 30px;
-} .m4 {
-margin-top: 40px;
-} .m5 {
-margin-top: 50px;
-} .m6 {
-margin-top: 60px;
-} .m7 {
-margin-top: 70px;
-} .m8 {
-margin-top: 80px;
-} .m9 {
-margin-top: 90px;
-} .m10 {
-margin-top: 100px;
-} .m15 {
-margin-top: 150px;
-} .m20 {
-margin-top: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+  .note {
+    display: block;
+  }
+  .m {
+    margin-top: 0;
+  }
 }
