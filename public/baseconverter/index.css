@@ -35,12 +35,6 @@ label {
   margin: 5px 0;
 }
 
-@media only screen and (max-width: 600px) {
-  label {
-    display: block;
-  }
-}
-
 input[type="text"], input[type="number"] {
   border-radius: 3px;
   border: 1px solid #ccc;
@@ -113,6 +107,12 @@ input.small {
   margin-left: 5px;
   font-size: 15px;
   color: #ccc;
+}
+
+@media only screen and (max-width: 600px) {
+  .note {
+    display: block;
+  }
 }
 
 #arrow {
