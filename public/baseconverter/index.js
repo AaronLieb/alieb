@@ -24,7 +24,7 @@ function verifyInput(...args) {
   return true;
 }
 
-function convert(b1,b2) {
+function convert() {
   var output = "";
   var input = $("#number").val();
   const b1 = $("#base1").val();
