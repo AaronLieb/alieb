@@ -37,18 +37,18 @@ input[type="number"] {
   display: inline-block;
   font-size: 15px;
 }
+input[type="text"].output,
+input[type="number"].output {
+  border-color: #aaf;
+}
+input[type="text"].small,
+input[type="number"].small {
+  width: 35px;
+  display: inline;
+}
 input[type="text"]:hover,
 input[type="number"]:hover {
   border-color: #aaf;
-}
-input[type="text"] .output,
-input[type="number"] .output {
-  border-color: #aaf;
-}
-input[type="text"] .small,
-input[type="number"] .small {
-  width: 35px;
-  display: inline;
 }
 ::placeholder {
   color: #ccc;
