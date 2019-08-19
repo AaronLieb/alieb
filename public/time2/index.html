@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title> Running Time Converter </title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="less.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <div class="hero">
+      <div class="heroTitle">
+        Running Time Converter
+      </div>
+    </div>
+    <div class="contents">
+      <div class="box">
+        <label> Initial Distance </label>
+        <input type="text" placeholder="3mi" />
+        <label> Initial Time </label>
+        <input type="text" placeholder="16:25" />
+        <label> Final Distance </label>
+        <input type="text" placeholder="5k" />
+        <div class="select">
+          <select>
+            <option> Same Pace </option>
+            <option> Adjust Pace </option>
+          </select>
+        </div>
+        <label> Final Time </label>
+        <input type="text" class="output" readonly="true" />
+        <a class="button mainColor" href="javascript:calculate()"> Convert </a>
+      </div>
+    </div>
+  </body>
+</html>
