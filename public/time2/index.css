@@ -5,7 +5,7 @@ body {
 }
 .hero {
   padding: 30px;
-  background-color: #ff9966;
+  background-color: #99ddff;
 }
 .heroTitle {
   font-size: 50px;
@@ -60,7 +60,7 @@ input[type="number"]:hover {
   background-color: #ccc;
   border-radius: 5px;
   padding: 10px;
-  margin: 3px 0;
+  margin: 8px 0;
   display: inline-block;
 }
 .button:hover {
@@ -70,47 +70,54 @@ input[type="number"]:hover {
   background-color: #aaa;
 }
 .mainColor {
-  background-color: #ff9966;
+  background-color: #99ddff;
   color: white;
 }
 .mainColor:hover {
-  background-color: #e68a5c;
+  background-color: #8ac7e6;
 }
 .mainColor:active {
-  background-color: #d98257;
+  background-color: #82bcd9;
 }
-.copyText {
-  font-size: 12px;
-  padding: 7px;
-  background-color: #eee;
-  color: inherit;
+.select {
+  width: 200px;
+  border-radius: 5px;
+  border-color: #aaf;
+  margin: 10px 0;
 }
-.copyText:hover {
-  background-color: #ddd;
-}
-.popup {
-  color: limeGreen;
-  font-size: 14px;
-  font-weight: 400;
-  display: none;
-}
-.note {
-  margin-left: 5px;
-  font-size: 15px;
-  color: #ccc;
-}
-#arrow {
-  text-decoration: none;
-  color: #2a3a4a;
-}
-.m1 {
+.space.1 {
   margin-top: 10px;
 }
-@media only screen and (max-width: 600px) {
-  .note {
-    display: block;
-  }
-  .m {
-    margin-top: 0;
-  }
+.space.2 {
+  margin-top: 20px;
+}
+.space.3 {
+  margin-top: 30px;
+}
+.space.4 {
+  margin-top: 40px;
+}
+.space.5 {
+  margin-top: 50px;
+}
+.space.6 {
+  margin-top: 60px;
+}
+.space.7 {
+  margin-top: 70px;
+}
+.space.8 {
+  margin-top: 80px;
+}
+.space.9 {
+  margin-top: 90px;
+}
+.space.10 {
+  margin-top: 100px;
+}
+.space.15 {
+  margin-top: 150px;
+}
+.space.20 {
+  margin-top: 200px;
 }
