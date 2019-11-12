@@ -44,7 +44,7 @@ var t = {
       "on aliens":["UFO","illegal","space"],
       "on weed":["high","weed"],
       "on communism":["equal","capitalism","money"],
-      "abortion": ["kill", "baby", "life", "choice"]
+      "on abortion": ["kill", "baby", "life", "choice"]
     }
   },
   "3":{
