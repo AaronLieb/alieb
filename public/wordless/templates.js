@@ -14,8 +14,7 @@ var t = {
       "Mexico":["Mexico","family/relatives"],
       "North Korea":["Korea","Kim Jong-un"],
       "France":["food","Paris"],
-      "Japan":["Tokyo","sushi"],
-      "your Parent's house": ["mom", "dad"],
+      "Japan":["Tokyo","sushi"]
     }
   },
   "1":{
@@ -29,7 +28,7 @@ var t = {
       "Area 51":["alien","secret","government"],
       "the White House":["president","tour"],
       "Panda Express": ["chinese", "food", "ate"],
-      ]
+      "your Parent's house":["mom","dad"]
     }
   },
   "2":{
@@ -45,7 +44,7 @@ var t = {
       "on aliens":["UFO","illegal","space"],
       "on weed":["high","weed"],
       "on communism":["equal","capitalism","money"],
-      "abortion": ["kill", "baby", "life", "choice"],
+      "abortion": ["kill", "baby", "life", "choice"]
     }
   },
   "3":{
@@ -77,7 +76,7 @@ var t = {
       "Hitler",
       "Queen Elizabeth II",
       "Hellen Keller",
-      "your Mom",
+      "your Mom"
     ]
   },
   "4":{
@@ -88,7 +87,7 @@ var t = {
         "a murder":["killed","stab","shot"],
         "a car crash":["crash","car","dead","police/cops"],
         "a bank robbery": ["bank","gun","money/cash"],
-        "a plane crash": ["crash", "plane", "fly"],
+        "a plane crash": ["crash", "plane", "fly"]
       }
   },
   "5":{
@@ -101,10 +100,9 @@ var t = {
       "Victoria Secret",
       "Comcast",
       "Panda Express",
-      "Nuclear Facility",
+      "a Nuclear Facility",
       "Google",
       "BlockBuster"
-
     ]
   },
   "6":{
@@ -116,7 +114,7 @@ var t = {
         "an egyptian tomb": ["mummy","trap", "egyptian", "pyramid"],
         "a homeless man threatening you with his spork": ["hobo/homeless", "he/they"],
         "your mom while at the club": ["club", "mom"],
-        "a polar bear": ["bear"],
+        "a polar bear": ["bear"]
       }
-  },
+  }
 }
