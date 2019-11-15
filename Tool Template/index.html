@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title> Template </title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="less.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <div class="hero">
+      <div class="heroTitle">
+        Tool Template
+      </div>
+    </div>
+    <div class="contents">
+      <div class="box">
+        <label> Input here </label>
+        <input type="text" placeholder="text" />
+        <label> Input here </label>
+        <input type="number" placeholder="5" />
+        <a class="button" href="javascript:fillText()"> Button </a>
+        <a class="button mainColor" href="javascript:fillText2()"> Button </a> <br>
+        <label> Output </label>
+        <input type="text" class="output" readonly="true" />
+        <a class="button copyText" href="javascript:copyText()"> Copy to Clipboard </a>
+        <span class="popup"> Success! </span>
+      </div>
+    </div>
+  </body>
+</html>
