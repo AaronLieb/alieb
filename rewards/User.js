@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = class user {
-  generate(callback) {
+  generate() {
     console.log("Generating...")
     fs.readFile('names.csv', (err, data) => {
       let names = data.toString('utf8').split(",");
@@ -9,7 +9,11 @@ module.exports = class user {
       this.lastName = names[rand(2000,2999)];
       this.email = generateEmail(this.firstName, this.lastName);
       this.birthday = new Date();
-      callback();
+      let data = {};
+      Object.entries(this).forEach(([key, value]) => {data[key] = value})
+      fs.writeFile('user.json', JSON.stringify(data), (err) => {
+          if (err) throw err;
+      });
     })
   }
 }

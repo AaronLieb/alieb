@@ -12,7 +12,8 @@ app.get('/old', function(req, res){
 });
 
 app.get("/rewards/user", function(req, res) {
-  res.send({"first":"Aaron","last":"Lieberman","email":"AaronLieberman@test.com"})
+  res.sendFile(__dirname + '/rewards/user.json')
+  (new User()).generate();
 });
 
 app.listen(3000, function(){
