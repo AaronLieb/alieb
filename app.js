@@ -11,6 +11,10 @@ app.get('/old', function(req, res){
   res.sendFile(__dirname + '/public/home/index.html');
 });
 
+app.get("/rewards/user", function(req, res) {
+  res.send({"first":"Aaron","last":"Lieberman","email":"AaronLieberman@test.com"})
+});
+
 app.listen(3000, function(){
   console.log('listening on *:3000');
 });
