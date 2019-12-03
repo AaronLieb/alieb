@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var User = ("./rewards/User.js");
 
 app.use(express.static(__dirname + '/public'));
 
