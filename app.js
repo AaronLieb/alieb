@@ -14,7 +14,7 @@ app.get('/old', function(req, res){
 
 app.get("/rewards/user", function(req, res) {
   res.sendFile(__dirname + '/rewards/user.json')
-  (new User()).generate();
+  (new User).generate();
 });
 
 app.listen(3000, function(){
