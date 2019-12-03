@@ -1,18 +1,15 @@
 const fs = require('fs');
 
-module.exports = {
-  generateUser = () => {
+module.exports = class user {
+  generate(callback) {
+    console.log("Generating...")
     fs.readFile('names.csv', (err, data) => {
       let names = data.toString('utf8').split(",");
-      // 0-1999 are first names, 2000-2999 are last names
-      let firstName = names[rand(0,1999)];
-      let lastName = names[rand(2000,2999)];
-      let email = generateEmail(firstName, lastName);
-      return {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-      }
+      this.firstName = names[rand(0,1999)];
+      this.lastName = names[rand(2000,2999)];
+      this.email = generateEmail(this.firstName, this.lastName);
+      this.birthday = new Date();
+      callback();
     })
   }
 }

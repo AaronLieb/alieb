@@ -1,3 +1,9 @@
-const gen = require('./nameGenerator.js');
+const User = require('./User.js');
 
-console.log(gen.generateUser())
+let user = new User();
+user.generate(() => {
+  console.log(user.firstName)
+  console.log(user.lastName);
+  console.log(user.email)
+  console.log(user.birthday)
+})
